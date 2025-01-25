@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container flex-wrap">
+            <a class="brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="logo" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="brand-name">Hawk Eye Robotics</span>
+            </a>
+            <nav class="nav">
+                <a class="nav-link" href="home.html">HOME</a>
+                <a class="nav-link" href="blog.html">PROJECT HUB</a>
+                <a class="nav-link" href="contact.html">CONTACT</a>
+                <a class="nav-link" href="cart.html">CART</a>
+            </nav>
+            <a href="login.html"><button class="button">
+                Log Out
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="button-icon" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </button></a>
+        </div>
+    </header>
+
+    <section class="payment-section">
+        <div class="payment-container">
+            <h1 class="payment-title">Payment</h1>
+
+            <div class="invoice-address">
+                <div class="invoice-to">
+                    <h2>From:</h2>
+                    <p>Hawk Eye Robotics Kaverappa Layout, Kadubeesanahalli, Kadabeesanahalli, Bengaluru, Karnataka 560103</p>
+                </div>
+                <div class="invoice-from">
+                    <h2>To:</h2>
+                    <input type="text" placeholder="Enter your address" id="address-input">
+                </div>
+            </div>
+
+            <table class="product-list">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Total Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="product-list">
+                    <!-- Products will be dynamically inserted here -->
+                </tbody>
+            </table>
+
+            <div class="payment-summary">
+                <div class="summary-item">
+                    <span class="summary-label">Grand Total:</span>
+                    <span class="summary-value" id="grand-total">₹0</span>
+                </div>
+                <div class="payment-options">
+                    <h2 class="payment-options-title">Choose Payment Method</h2>
+                    <button class="payment-button" onclick="handlePayment('UPI')">UPI</button>
+                    <button class="payment-button" onclick="handlePayment('Cash on Delivery')">Cash on Delivery</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function loadPaymentPage() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const productListContainer = document.getElementById('product-list');
+            const grandTotalElement = document.getElementById('grand-total');
+            const addressInput = document.getElementById('address-input');
+
+            productListContainer.innerHTML = '';
+            let grandTotal = 0;
+
+            cart.forEach(item => {
+                const productRow = document.createElement('tr');
+
+                const productName = document.createElement('td');
+                productName.textContent = item.name;
+
+                const productQuantity = document.createElement('td');
+                productQuantity.textContent = item.quantity;
+
+                const productTotal = document.createElement('td');
+                productTotal.textContent = `₹${item.total}`;
+
+                productRow.appendChild(productName);
+                productRow.appendChild(productQuantity);
+                productRow.appendChild(productTotal);
+
+                productListContainer.appendChild(productRow);
+
+                grandTotal += item.total;
+            });
+
+            grandTotalElement.textContent = `₹${grandTotal}`;
+
+            
+            document.querySelector('.payment-button').addEventListener('click', () => {
+                const address = addressInput.value;
+                localStorage.setItem('shippingAddress', address);
+                window.location.href = 'upi.html'; 
+            });
+        }
+
+        function handlePayment(method) {
+            alert(`Payment method chosen: ${method},Thanks For Shopping`);
+        
+        }
+
+        document.addEventListener('DOMContentLoaded', loadPaymentPage);
+    </script>
+
+</body>
+</html>

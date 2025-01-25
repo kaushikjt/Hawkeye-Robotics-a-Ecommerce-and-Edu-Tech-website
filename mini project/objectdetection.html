@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container flex-wrap">
+            <a class="brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="logo" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="brand-name">Hawk Eye Robotics</span>
+            </a>
+            <nav class="nav">
+                <a class="nav-link" href="home.html">HOME</a>
+                <a class="nav-link" href="blog.html">PROJECT HUB</a>
+                <a class="nav-link" href="contact.html">CONTACT</a>
+                <a class="nav-link" href="cart.html">CART</a>
+            </nav>
+            <a href=login.html><button class="button">
+                Log Out
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="button-icon" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </button></a>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <center><img class="hero-image" alt="hero" src="C:\Users\jtkau\OneDrive\Desktop\web development\images\colour.jpg"></center>
+            <div class="text-content">
+                <h1 class="hero-title">Smart Object Detection and Sorting System</h1>
+                <p class="hero-description"><b>Description:</b></p>
+                <p class="hero-description">This project combines the capabilities of an ultrasonic sensor for distance measurement and a color sensor for color detection. It aims to create a system that can detect objects based on their distance and sort them based on their color</p>
+                <p class="hero-description"><b>Components Required:</b></p>
+                <ul class="hero-description">
+                    <li>Ultrasonic Sensor: To measure the distance of objects from the sensor.</li>
+                    <li>Color Sensor: Such as TCS3200 or TCS34725, to detect and differentiate between colors</li>
+                    <li>Microcontroller: Arduino or similar to process sensor data and control system operations.</li>
+                    <li>Motorized Mechanism: Conveyor belt or robotic arm for moving objects.</li>
+                    <li>Display: LCD display or LEDs for visual feedback and system status.</li>
+                    <li>Power Supply: Battery pack to power the motors and electronics.</li>
+                </ul><pre>
+ code:
+ #include <Wire.h> // Include the Wire library for I2C communication with color sensor
+
+    // Ultrasonic sensor pins
+    const int trigPin = 2;
+    const int echoPin = 3;
+    
+    // Color sensor pins
+    const int s0 = 4;
+    const int s1 = 5;
+    const int s2 = 6;
+    const int s3 = 7;
+    const int out = A0;
+    
+    // Variables for ultrasonic sensor
+    long duration;
+    int distance;
+    
+    // Variables for color sensor
+    int redValue, greenValue, blueValue;
+    
+    void setup() {
+      // Ultrasonic sensor pins setup
+      pinMode(trigPin, OUTPUT);
+      pinMode(echoPin, INPUT);
+      
+      // Color sensor pins setup
+      pinMode(s0, OUTPUT);
+      pinMode(s1, OUTPUT);
+      pinMode(s2, OUTPUT);
+      pinMode(s3, OUTPUT);
+      pinMode(out, INPUT);
+      
+      // Initialize serial communication
+      Serial.begin(9600);
+      
+      // Set color sensor to active mode
+      colorSensorActive();
+    }
+    
+    void loop() {
+      // Measure distance using ultrasonic sensor
+      distance = measureDistance();
+      
+      // Read RGB values using color sensor
+      readColor();
+      
+      // Print distance and color values
+      Serial.print("Distance: ");
+      Serial.print(distance);
+      Serial.print(" cm, Red: ");
+      Serial.print(redValue);
+      Serial.print(", Green: ");
+      Serial.print(greenValue);
+      Serial.print(", Blue: ");
+      Serial.println(blueValue);
+      
+      // Add logic based on distance and color values
+      // Example: Stop if an object is too close and is red
+      if (distance < 10 && redValue > 200) {
+        // Stop or perform action
+        Serial.println("Object detected too close and red!");
+        // Add your action here, like stopping the motors or displaying a message
+      }
+      
+      // Delay for stability
+      delay(500);
+    }
+    
+    // Function to measure distance using ultrasonic sensor
+    int measureDistance() {
+      digitalWrite(trigPin, LOW);
+      delayMicroseconds(2);
+      digitalWrite(trigPin, HIGH);
+      delayMicroseconds(10);
+      digitalWrite(trigPin, LOW);
+      duration = pulseIn(echoPin, HIGH);
+      return duration * 0.034 / 2; // Calculate distance in cm
+    }
+    
+    // Function to set color sensor to active mode
+    void colorSensorActive() {
+      digitalWrite(s0, HIGH);
+      digitalWrite(s1, HIGH);
+    }
+    
+    // Function to read RGB values from color sensor
+    void readColor() {
+      // Read red value
+      digitalWrite(s2, LOW);
+      digitalWrite(s3, LOW);
+      redValue = pulseIn(out, LOW); // Read pulse width
+      
+      // Read green value
+      digitalWrite(s2, HIGH);
+      digitalWrite(s3, HIGH);
+      greenValue = pulseIn(out, LOW); // Read pulse width
+      
+      // Read blue value
+      digitalWrite(s2, LOW);
+      digitalWrite(s3, HIGH);
+      blueValue = pulseIn(out, LOW); // Read pulse width
+    }
+</pre>
+                <p class="hero-description">The ultrasonic sensor measures the distance to an object placed in front of it.
+                    The color sensor analyzes the color of the object when it reaches a certain distance threshold.
+                    The microcontroller processes the sensor data, determines the object's color, and controls the sorting mechanism based on predefined color thresholds.<br>
+                    Depending on the detected color, the microcontroller activates the motorized mechanism to sort the object into appropriate bins or locations.</p>
+                <p class="hero-description"><b>Applications:</b></p>
+                <ul class="hero-description">
+                    <li>Industrial Automation: Used in manufacturing industries for sorting products based on color.</li>
+                    <li>Fun and Hobby: Enjoyable for hobbyists interested in building and controlling robotic vehicles.</li>
+                    <li>Educational Purposes: Learning about sensor integration, color detection algorithms, and automated systems.</li>
+                </ul>
+               
+            </div>
+            <div class="button-container">
+                <a href="https://www.youtube.com/watch?v=Qeyvpp_-dkk&ab_channel=MrInnovative" class="cta-button">Videos</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

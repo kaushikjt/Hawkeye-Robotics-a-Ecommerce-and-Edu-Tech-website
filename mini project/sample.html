@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+       
+        .add-projects-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .add-projects-btn {
+            background-color: #4CAF50; 
+            color: white; 
+            padding: 15px 32px; 
+            text-align: center; 
+            text-decoration: none;
+            display: inline-block; 
+            font-size: 16px; 
+            margin: 4px 2px; 
+            cursor: pointer; 
+            border: none; 
+            border-radius: 4px; 
+        }
+
+        .add-projects-btn:hover {
+            background-color: #45a049; 
+        }
+
+        
+        .popup-form {
+            display: none; 
+            position: fixed; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); 
+            justify-content: center; 
+            align-items: center; 
+        }
+
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .form-container h2 {
+            margin-top: 0;
+        }
+
+        .form-container input, .form-container textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-container button {
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        .form-container .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .article-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .article-item {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .article-item .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            color: red;
+        }
+
+        .article-meta {
+            margin-bottom: 10px;
+        }
+
+        .article-meta .category {
+            font-weight: bold;
+        }
+
+        .article-content .title {
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        .article-content .description {
+            margin: 10px 0;
+        }
+
+        .article-content .learn-more {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .article-content .learn-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Detailed view styles */
+        .detailed-view {
+            display: none;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-top: 10px;
+        }
+
+        .detailed-view img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .detailed-view pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container flex-wrap">
+            <a class="brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="logo" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="brand-name">Hawk Eye Robotics</span>
+            </a>
+            <nav class="nav">
+                <a class="nav-link" href="home.html">HOME</a>
+                <a class="nav-link" href="blog.html">PROJECT HUB</a>
+                <a class="nav-link" href="contact.html">CONTACT</a>
+                <a class="nav-link" href="cart.html">CART</a>
+            </nav>
+            <a href="login.html"><button class="button">
+                Log Out
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="button-icon" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </button></a>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="text-gray-600 body-font overflow-hidden">
+            <div class="container">
+                <div class="article-wrapper" id="articleWrapper">
+                    <!-- Articles will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Project button section -->
+        <div class="add-projects-container">
+            <a href="#" class="add-projects-btn" id="addProjectBtn">Add Project</a>
+        </div>
+    </main>
+
+    <!-- Popup form -->
+    <div class="popup-form" id="popupForm">
+        <div class="form-container">
+            <span class="close" id="closeForm">&times;</span>
+            <h2>Add New Project</h2>
+            <form id="projectForm">
+                <input type="text" id="title" placeholder="Title" required>
+                <textarea id="description" placeholder="Description" rows="4" required></textarea>
+                <textarea id="brief" placeholder="Brief Description" rows="4" required></textarea>
+                <input type="file" id="image" accept="image/*" required>
+                <textarea id="code" placeholder="Code" rows="6" required></textarea>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    document.getElementById('addProjectBtn').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('popupForm').style.display = 'flex';
+});
+
+document.getElementById('closeForm').addEventListener('click', function() {
+    document.getElementById('popupForm').style.display = 'none';
+});
+
+document.getElementById('projectForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const title = document.getElementById('title').value;
+    const description = document.getElementById('description').value;
+    const brief = document.getElementById('brief').value;
+    const image = document.getElementById('image').files[0];
+    const code = document.getElementById('code').value;
+
+    if (title && description && brief && image && code) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const projects = JSON.parse(localStorage.getItem('projects')) || [];
+            projects.push({
+                title,
+                description,
+                brief,
+                image: e.target.result,
+                code
+            });
+            localStorage.setItem('projects', JSON.stringify(projects));
+            document.getElementById('popupForm').style.display = 'none';
+            document.getElementById('projectForm').reset(); // Clear form data
+            alert('Project added successfully!');
+            displayProjects(); // Update the project list
+        };
+        reader.readAsDataURL(image); // Convert image file to base64
+    } else {
+        alert('Please fill in all fields and upload an image.');
+    }
+});
+
+function displayProjects() {
+    const projects = JSON.parse(localStorage.getItem('projects')) || [];
+    const articleWrapper = document.getElementById('articleWrapper');
+    articleWrapper.innerHTML = ''; // Clear existing projects
+
+    projects.forEach((project, index) => {
+        const articleItem = document.createElement('div');
+        articleItem.className = 'article-item';
+
+        articleItem.innerHTML = `
+            <span class="delete-btn" onclick="removeProject(${index})">&times;</span>
+            <div class="article-meta">
+                <span class="category">Project ${index + 1}</span>
+            </div>
+            <div class="article-content">
+                <h2 class="title">${project.title}</h2>
+                <p class="description">${project.brief}</p>
+                <a class="learn-more" href="#" onclick="toggleDetails(${index})">Learn More</a>
+                <div class="detailed-view" id="details-${index}">
+                    <img src="${project.image}" alt="${project.title}">
+                    <pre class="code">${project.code}</pre>
+                    <p>${project.description}</p>
+                </div>
+            </div>
+        `;
+        articleWrapper.appendChild(articleItem);
+    });
+}
+
+function removeProject(index) {
+    const projects = JSON.parse(localStorage.getItem('projects')) || [];
+    projects.splice(index, 1); // Remove project at index
+    localStorage.setItem('projects', JSON.stringify(projects));
+    displayProjects(); // Update the project list
+}
+
+function toggleDetails(index) {
+    const details = document.getElementById(`details-${index}`);
+    details.style.display = details.style.display === 'block' ? 'none' : 'block';
+}
+
+window.onload = displayProjects; 
+
+    </script>
+</body>
+</html>

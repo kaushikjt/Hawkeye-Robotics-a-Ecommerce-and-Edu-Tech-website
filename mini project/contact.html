@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hawk Eye Robotics</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a class="brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="logo" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="brand-name">Hawk Eye Robotics</span>
+            </a>
+            <nav class="nav">
+                <a class="nav-link" href="home.html">HOME</a>
+                <a class="nav-link" href="blog.html">PROJECT HUB</a>
+                <a class="nav-link" href="contact.html">CONTACT</a>
+                <a class="nav-link" href="cart.html">CART</a>
+            </nav>
+            <a href=login.html><button class="button">
+                Log Out
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="button-icon" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </button></a>
+        </div>
+    </header>
+
+    <section class="content-section">
+        <div class="container map-feedback">
+            <div class="map-wrapper">
+                <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.595117980726!2d77.68954577447353!3d12.933724087378145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13cb00000001%3A0xab10e26281718cc2!2sNew%20Horizon%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1721451426860!5m2!1sen!2sin"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+                <div class="bg-white relative flex flex-wrap py-6 rounded shadow-md">
+                    <div class="lg:w-1/2 px-6">
+                        <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">ADDRESS</h2>
+                        <p class="mt-1">New Horizon College Of Engineering Svn Hostel, Kaverappa Layout, Kadubeesanahalli, Kadabeesanahalli, Bengaluru, Karnataka 560103</p>
+                    </div>
+                    <div class="lg:w-1/2 px-6 mt-4 lg:mt-0">
+                        <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">EMAIL</h2>
+                        <a class="text-indigo-500 leading-relaxed" href="mailto:example@email.com">hawkeyerobotics18@gemail.com</a>
+                        <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">PHONE</h2>
+                        <p class="leading-relaxed">8147813247</p>
+                    </div>
+                </div>
+            </div>
+            <div class="feedback-form">
+                <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Feedback</h2>
+                <p class="leading-relaxed mb-5 text-gray-600"></p>
+                <form action="#" method="post">
+                    <div class="input-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Submit</button>
+                </form>
+                <p class="text-xs text-gray-500 mt-3"></p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container flex-wrap">
+            <a class="brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="logo" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="brand-name">Hawk Eye Robotics</span>
+            </a>
+            <nav class="nav">
+                <a class="nav-link" href="home.html">HOME</a>
+                <a class="nav-link" href="blog.html">PROJECT HUB</a>
+                <a class="nav-link" href="contact.html">CONTACT</a>
+                <a class="nav-link" href="cart.html">CART</a>
+            </nav>
+            <a href="login.html"><button class="button">
+                Log Out
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="button-icon" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </button></a>
+        </div>
+    </header>
+    <section class="cart-section">
+        <div class="cart-container">
+            <h1 class="cart-title">Shopping Cart</h1>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- Cart items will be dynamically inserted here -->
+                </tbody>
+            </table>
+            <div class="cart-summary">
+                <div class="summary-item">
+                    <span class="summary-label">Grand Total:</span>
+                    <span class="summary-value" id="grand-total">₹0</span>
+                </div>
+               <a href="payment.html"> <button class="checkout-button">Pay Now</button></a>
+                <button class="empty-cart-button" onclick="emptyCart()">Empty Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            const grandTotalElement = document.getElementById('grand-total');
+
+            cartItemsContainer.innerHTML = '';
+            let grandTotal = 0;
+
+            cart.forEach((item, index) => {
+                const row = document.createElement('tr');
+
+                const productCell = document.createElement('td');
+                productCell.classList.add('cart-product');
+                const img = document.createElement('img');
+                img.src = item.image;
+                img.alt = item.name;
+                img.classList.add('cart-product-image');
+                productCell.appendChild(img);
+                const name = document.createElement('span');
+                name.textContent = item.name;
+                productCell.appendChild(name);
+
+                const priceCell = document.createElement('td');
+                priceCell.classList.add('cart-price');
+                priceCell.textContent = `₹${item.price}`;
+
+                const quantityCell = document.createElement('td');
+                quantityCell.classList.add('cart-quantity');
+                quantityCell.textContent = item.quantity;
+
+                const totalCell = document.createElement('td');
+                totalCell.classList.add('cart-total');
+                totalCell.textContent = `₹${item.total}`;
+
+                const removeCell = document.createElement('td');
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'X';
+                removeButton.classList.add('remove-button');
+                removeButton.onclick = () => removeFromCart(index);
+                removeCell.appendChild(removeButton);
+
+                row.appendChild(productCell);
+                row.appendChild(priceCell);
+                row.appendChild(quantityCell);
+                row.appendChild(totalCell);
+                row.appendChild(removeCell);
+
+                cartItemsContainer.appendChild(row);
+
+                grandTotal += item.total;
+            });
+
+            grandTotalElement.textContent = `₹${grandTotal}`;
+        }
+
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        function emptyCart() {
+            localStorage.removeItem('cart');
+            loadCart();
+        }
+
+        document.addEventListener('DOMContentLoaded', loadCart);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container flex-wrap">
+            <a class="brand">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="logo" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="brand-name">Hawk Eye Robotics</span>
+            </a>
+            <nav class="nav">
+                <a class="home.html">HOME </a>
+                <a class="nav-link">BLOG</a>
+                <a class="nav-link">CONTACT</a>
+                <a class="nav-link">CART</a>
+            </nav>
+            <button class="button">
+                Button
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="button-icon" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container py-24">
+            <div class="grid">
+                
+                <div class="card">
+                    <a class="image-wrapper" href="arduino.html">
+                        <img alt="Arduino Uno" class="image" src="C:\Users\jtkau\OneDrive\Desktop\web development\images\11 (1) (2).jpg">
+                    </a>
+                    <div class="content">
+                        <h3 class="category">MotherBoard</h3>
+                        <h2 class="title">Arduino Uno</h2>
+                        <p class="price">₹450</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <a class="image-wrapper" href="smoke.html">
+                        <img alt="Smoke Sensor" class="image" src="C:\Users\jtkau\OneDrive\Desktop\web development\images\smoke (1).webp">
+                    </a>
+                    <div class="content">
+                        <h3 class="category">Sensors</h3>
+                        <h2 class="title">Smoke Sensor</h2>
+                        <p class="price">₹150</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <a class="image-wrapper" href="ir.html">
+                        <img alt="IR Sensor" class="image" src="C:\Users\jtkau\OneDrive\Desktop\web development\images\2 (1).jpg">
+                    </a>
+                    <div class="content">
+                        <h3 class="category">Sensors</h3>
+                        <h2 class="title">IR Sensor</h2>
+                        <p class="price">₹50</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <a class="image-wrapper" href="pi.html">
+                        <img alt="Rasberry Pi" class="image" src="C:\Users\jtkau\OneDrive\Desktop\web development\images\raspberry (1).jpg">
+                    </a>
+                    <div class="content">
+                        <h3 class="category">MotherBoard</h3>
+                        <h2 class="title">Rasberry Pi</h2>
+                        <p class="price">₹4500</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <a class="image-wrapper" href="l293d.html">
+                        <img alt="L293D Motor Driver" class="image" src="C:\Users\jtkau\OneDrive\Desktop\web development\images\4 (1).png">
+                    </a>
+                    <div class="content">
+                        <h3 class="category">Motor Drivers</h3>
+                        <h2 class="title">L293D Motor Driver</h2>
+                        <p class="price">₹250</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <a class="image-wrapper" href="ultrasonic.html">
+                        <img alt="Ultrasonic Sonic Sensor" class="image" src="C:\Users\jtkau\OneDrive\Desktop\web development\images\ultra.jpg">
+                    </a>
+                    <div class="content">
+                        <h3 class="category">Sensors</h3>
+                        <h2 class="title">Ultrasonic Sonic Sensor</h2>
+                        <p class="price">₹150</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <a class="image-wrapper" href="color.html">
+                        <img alt="Colour Sensor" class="image" src="C:\Users\jtkau\OneDrive\Desktop\web development\images\colour-sensor (1).png">
+                    </a>
+                    <div class="content">
+                        <h3 class="category">Sensors</h3>
+                        <h2 class="title">Colour Sensor</h2>
+                        <p class="price">₹200</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <a class="image-wrapper" href="l298n.html">
+                        <img alt="L298n Motor Driver" class="image" src="C:\Users\jtkau\OneDrive\Desktop\web development\images\l293n (1).jpg">
+                    </a>
+                    <div class="content">
+                        <h3 class="category">Motor Drivers</h3>
+                        <h2 class="title">L298n Motor Driver</h2>
+                        <p class="price">₹280</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <a class="image-wrapper" href="bo.html">
+                        <img alt="Bo Wheels" class="image" src="C:\Users\jtkau\OneDrive\Desktop\web development\images\bo wheels (1).webp">
+                    </a>
+                    <div class="content">
+                        <h3 class="category">Wheels</h3>
+                        <h2 class="title">Bo Wheels</h2>
+                        <p class="price">₹100</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <a class="image-wrapper" href="drone.html">
+                        <img alt="Drone Motor" class="image" src="C:\Users\jtkau\OneDrive\Desktop\web development\images\drone motyors (1).webp">
+                    </a>
+                    <div class="content">
+                        <h3 class="category">Motors</h3>
+                        <h2 class="title">Drone Motor</h2>
+                        <p class="price">₹350</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <a class="image-wrapper" href="castor.html">
+                        <img alt="Castor Wheel" class="image" src="C:\Users\jtkau\OneDrive\Desktop\web development\images\casterwheel (1).png">
+                    </a>
+                    <div class="content">
+                        <h3 class="category">Wheels</h3>
+                        <h2 class="title">Castor Wheel</h2>
+                        <p class="price">₹30</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <a class="image-wrapper" href="rs.html">
+                        <img alt="RS-550 Motor" class="image" src="C:\Users\jtkau\OneDrive\Desktop\web development\images\rs550 (1).jpg">
+                    </a>
+                    <div class="content">
+                        <h3 class="category">Motors</h3>
+                        <h2 class="title">RS-550 Motor</h2>
+                        <p class="price">₹330</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container py-8 flex items-center flex-col sm:flex-row">
+            <a class="brand">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="logo" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="brand-name">Hawk Eye Robotics</span>
+            </a>
+            <p class="footer-text">© 2024 Hawk Eye Robotics
+                <a href="https://twitter.com/knyttneve" class="footer-link" rel="noopener noreferrer" target="_blank">@hawkeye</a>
+            </p>
+            <span class="social-icons">
+                <a class="social-icon">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon" viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                </a>
+                <a class="social-icon">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon" viewBox="0 0 24 24">
+                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                    </svg>
+                </a>
+                <a class="social-icon">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon" viewBox="0 0 24 24">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                    </svg>
+                </a>
+                <a class="social-icon">
+                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="icon" viewBox="0 0 24 24">
+                        <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                        <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                    </svg>
+                </a>
+            </span>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+
+rs html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container flex-wrap">
+            <a class="brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="logo" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="brand-name">Hawk Eye Robotics</span>
+            </a>
+            <nav class="nav">
+                <a class="nav-link" href="home.html">HOME</a>
+                <a class="nav-link" href="#">BLOG</a>
+                <a class="nav-link" href="#">CONTACT</a>
+                <a class="nav-link" href="#">CART</a>
+            </nav>
+            <button class="button">
+                Button
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="button-icon" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <section class="product-section">
+        <div class="container">
+            <div class="product-content">
+                <img alt="error" src="C:\Users\jtkau\OneDrive\Desktop\web development\images\rs550 (1).jpg" class="product-image">
+                <div class="product-details">
+                    <h2 class="brand-name">Motors</h2>
+                    <h1 class="product-title">RS-550 Motor</h1>
+                    <div class="product-description">RoboCraze UNO R3 SMD Board compatible with Arduino | Development Board with USB cable. Arduino is an open-source electronics platform based on easy-to-use hardware and software. It consists of a microcontroller board and a development environment for writing, compiling, and uploading code.
+                    </div>
+                    <div class="product-options">
+                        <div class="size-options">
+                            <span class="option-label">Quantity</span>
+                            <div class="size-select">
+                                <select class="size-dropdown">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                                <span class="size-icon">
+                                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="size-icon-svg" viewBox="0 0 24 24">
+                                        <path d="M6 9l6 6 6-6"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <span class="price">₹330</span>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                        <button class="wishlist-button">
+                            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="wishlist-icon" viewBox="0 0 24 24">
+                                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container py-8 flex items-center flex-col sm:flex-row">
+            <a class="brand">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="logo" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="brand-name">Hawk Eye Robotics</span>
+            </a>
+            <p class="footer-text">© 2024 Hawk Eye Robotics
+                <a href="https://twitter.com/knyttneve" class="footer-link" rel="noopener noreferrer" target="_blank">@hawkeye</a>
+            </p>
+            <span class="social-icons">
+                <a class="social-icon">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon" viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                </a>
+                <a class="social-icon">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon" viewBox="0 0 24 24">
+                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                    </svg>
+                </a>
+                <a class="social-icon">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon" viewBox="0 0 24 24">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                    </svg>
+                </a>
+                <a class="social-icon">
+                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="icon" viewBox="0 0 24 24">
+                        <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                        <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                    </svg>
+                </a>
+            </span>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+style1 css
+/* Reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh; /* Ensure full viewport height */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.brand .logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav-link {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.button-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+/* Product section styles */
+.product-section {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.product-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    margin-right: 40px;
+}
+
+.product-details {
+    flex: 1;
+}
+
+.product-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.rating-stars {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.star-icon {
+    width: 20px;
+    height: 20px;
+    fill: #FFC107;
+    margin-right: 2px;
+}
+
+.rating-count {
+    margin-left: 5px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icon {
+    margin-right: 10px;
+    color: #555;
+}
+
+.social-icon-svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.product-description {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.product-options {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.option-label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.color-options {
+    margin-right: 20px;
+}
+
+.color-button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+.size-options {
+    display: flex;
+    align-items: center;
+}
+
+.size-dropdown {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 1em;
+}
+
+.size-icon-svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+}
+
+.price {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.add-to-cart-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.wishlist-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.wishlist-icon {
+    width: 20px;
+    height: 20px;
+    stroke: #555;
+    fill: none;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.brand-name {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.footer-text {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+    .header .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .nav {
+        margin-top: 10px;
+    }
+    .nav-link {
+        margin-right: 10px;
+    }
+    .product-content {
+        flex-direction: column;
+    }
+    .product-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .product-title {
+        font-size: 1.5em;
+    }
+    .product-options {
+        flex-direction: column;
+    }
+    .color-options {
+        margin-bottom: 10px;
+    }
+}
+
+style css
+body {
+    font-family: 'Arial', sans-serif;
+    color: #4a5568;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    background-color: #f7fafc;
+    padding: 20px 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    background-color: #667eea;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.brand-name {
+    font-size: 1.25rem;
+    margin-left: 10px;
+    color: #2d3748;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-link {
+    margin-right: 20px;
+    color: #4a5568;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    color: #2d3748;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #edf2f7;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: #e2e8f0;
+}
+
+.button-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+.section {
+    background-color: #f7fafc;
+    padding: 40px 0;
+}
+
+/* Increase the size of image box and adjust width of card */
+.image-wrapper {
+    height: 300px; /* Increase height for larger images */
+    overflow: hidden;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between; /* Ensure even distribution of cards */
+}
+
+.card {
+    width: calc(24% - 20px); /* Adjusted width for better spacing */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px; /* Added margin to create space between cards */
+}
+.image {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensure the image scales and maintains aspect ratio */
+}
+
+
+.content {
+    padding: 15px;
+}
+
+.category {
+    font-size: 0.75rem;
+    color: #a0aec0;
+}
+
+.title {
+    font-size: 1rem;
+    color: #2d3748;
+    margin-top: 5px;
+}
+
+.price {
+    font-size: 1rem;
+    color: #2d3748;
+    margin-top: 10px;
+}
+
+.footer {
+    background-color: #f7fafc;
+    padding: 20px 0;
+}
+
+.footer-text {
+    font-size: 0.875rem;
+    color: #a0aec0;
+    margin-top: 10px;
+}
+
+.footer-link {
+    color: #4a5568;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icon {
+    color: #a0aec0;
+    cursor: pointer;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background-color: #0069d9;
+}
+
+.button-icon {
+    height: 24px;
+    width: 24px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+/* Content Section Styles */
+.content-section {
+    padding: 20px 0;
+}
+
+.map-feedback {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.map-wrapper {
+    flex: 2;
+    max-width: 1040px; /* Increased by 30% from 800px */
+    margin-bottom: 20px;
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 500px; /* Increased height if needed */
+    border: 0;
+}
+
+.feedback-form {
+    flex: 1;
+    max-width: 780px; /* Increased by 30% from 600px */
+}
+
+.feedback-form h2 {
+    margin-bottom: 10px;
+}
+
+.feedback-form p {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.input-group textarea {
+    height: 200px; /* Increased height for the textarea */
+    resize: vertical;
+}
+
+.submit-button {
+    background-color: #ff5722;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.submit-button:hover {
+    background-color: #e64a19;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.address, .contact-info {
+    margin-bottom: 20px;
+}
+
+.address h2, .contact-info h2 {
+    margin-top: 0;
+}
+
+.email-link {
+    color: #ff5722;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hawk Eye Robotics</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a class="brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="logo" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="brand-name">Hawk Eye Robotics</span>
+            </a>
+            <nav class="nav">
+                <a class="nav-link" href="home.html">HOME</a>
+                <a class="nav-link" href="blog.html">PROJECT HUB</a>
+                <a class="nav-link" href="contact.html">CONTACT</a>
+                <a class="nav-link" href="cart.html">CART</a>
+            </nav>
+            <button class="button">
+                Button
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="button-icon" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <section class="content-section">
+        <div class="container flex-wrap">
+            <div class="map-feedback">
+                <div class="map-wrapper">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.595117980726!2d77.68954577447353!3d12.933724087378145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13cb00000001%3A0xab10e26281718cc2!2sNew%20Horizon%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1721451426860!5m2!1sen!2sin"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="feedback-form">
+                    <h2>Feedback</h2>
+                    <p>Please Enter Your Queries</p>
+                    <form action="submit_feedback.php" method="post">
+                        <div class="input-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="contact-info">
+                <div class="address">
+                    <h2>ADDRESS</h2>
+                    <p>New Horizon College Of Engineering Svn Hostel, Kaverappa Layout, Kadubeesanahalli, Kadabeesanahalli, Bengaluru, Karnataka 560103</p>
+                </div>
+                <div class="contact-info">
+                    <h2>EMAIL</h2>
+                    <a class="email-link" href="mailto:hawkeyerobotics18@gmail.com">hawkeyerobotics18@gmail.com</a>
+                    <h2>PHONE</h2>
+                    <p>8147813247</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

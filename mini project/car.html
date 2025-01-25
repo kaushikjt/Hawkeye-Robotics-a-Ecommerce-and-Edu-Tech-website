@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container flex-wrap">
+            <a class="brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="logo" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="brand-name">Hawk Eye Robotics</span>
+            </a>
+            <nav class="nav">
+                <a class="nav-link" href="home.html">HOME</a>
+                <a class="nav-link" href="blog.html">PROJECT HUB</a>
+                <a class="nav-link" href="contact.html">CONTACT</a>
+                <a class="nav-link" href="cart.html">CART</a>
+            </nav>
+            <a href=login.html><button class="button">
+              Log Out
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="button-icon" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+          </button></a>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <center><img class="hero-image" alt="hero" src="C:\Users\jtkau\OneDrive\Desktop\web development\images\blueetooth.jpg"></center>
+            <div class="text-content">
+                <h1 class="hero-title">Bluetooth Controlled Car</h1>
+                <p class="hero-description"><b>Description:</b></p>
+                <p class="hero-description">This project involves building a remote-controlled car that can be wirelessly operated via Bluetooth communication from a mobile device. Users can control the car's movement and possibly other functions using a smartphone or tablet.</p>
+                <p class="hero-description"><b>Components Required:</b></p>
+                <ul class="hero-description">
+                    <li>Chassis: Provides the structure and wheels for the car.</li>
+                    <li>DC Motors: Typically two motors for driving the car forward, backward, and turning.</li>
+                    <li>Motor Driver: Module (e.g., L298N) to control the speed and direction of the motors.</li>
+                    <li>Bluetooth Module: Such as HC-05 or HC-06 for wireless communication with the mobile device.</li>
+                    <li>Microcontroller: Like Arduino or ESP32 to interface with the Bluetooth module and control the motor driver.</li>
+                    <li>Power Supply: Battery pack to power the motors and electronics.</li>
+                </ul><pre>
+ code:
+// Define motor control pins
+const int motorLeftPin1 = 2;
+const int motorLeftPin2 = 3;
+const int motorRightPin1 = 4;
+const int motorRightPin2 = 5;
+
+// Define Bluetooth communication pins
+const int bluetoothTx = 1; // Arduino TX to Bluetooth RX
+const int bluetoothRx = 0; // Arduino RX to Bluetooth TX
+
+// Variables to store incoming commands from Bluetooth
+char command;
+
+void setup() {
+  // Initialize motor control pins as outputs
+  pinMode(motorLeftPin1, OUTPUT);
+  pinMode(motorLeftPin2, OUTPUT);
+  pinMode(motorRightPin1, OUTPUT);
+  pinMode(motorRightPin2, OUTPUT);
+  
+  // Initialize Serial communication for Bluetooth
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Check if data is available to read from Bluetooth
+  if (Serial.available() > 0) {
+    command = Serial.read(); // Read the incoming command
+    
+    // Perform actions based on the command received
+    if (command == 'F') {
+      // Move forward
+      digitalWrite(motorLeftPin1, HIGH);
+      digitalWrite(motorLeftPin2, LOW);
+      digitalWrite(motorRightPin1, HIGH);
+      digitalWrite(motorRightPin2, LOW);
+    } else if (command == 'B') {
+      // Move backward
+      digitalWrite(motorLeftPin1, LOW);
+      digitalWrite(motorLeftPin2, HIGH);
+      digitalWrite(motorRightPin1, LOW);
+      digitalWrite(motorRightPin2, HIGH);
+    } else if (command == 'L') {
+      // Turn left
+      digitalWrite(motorLeftPin1, LOW);
+      digitalWrite(motorLeftPin2, HIGH);
+      digitalWrite(motorRightPin1, HIGH);
+      digitalWrite(motorRightPin2, LOW);
+    } else if (command == 'R') {
+      // Turn right
+      digitalWrite(motorLeftPin1, HIGH);
+      digitalWrite(motorLeftPin2, LOW);
+      digitalWrite(motorRightPin1, LOW);
+      digitalWrite(motorRightPin2, HIGH);
+    } else if (command == 'S') {
+      // Stop
+      digitalWrite(motorLeftPin1, LOW);
+      digitalWrite(motorLeftPin2, LOW);
+      digitalWrite(motorRightPin1, LOW);
+      digitalWrite(motorRightPin2, LOW);
+    }
+  }
+}
+</pre>
+                <p class="hero-description">The Bluetooth module is connected to the microcontroller (e.g., Arduino) using serial communication (TX and RX pins). The microcontroller controls the motor driver module, which in turn drives the DC motors based on commands received via Bluetooth from the mobile device.<br>
+                     Power is supplied to the motors through the motor driver module and to the microcontroller and Bluetooth module through the power supply.</p>
+                <p class="hero-description"><b>Applications:</b></p>
+                <ul class="hero-description">
+                    <li>Education and Learning: Provides hands-on experience with electronics, microcontrollers, and Bluetooth communication.</li>
+                    <li>Fun and Hobby: Enjoyable for hobbyists interested in building and controlling robotic vehicles.</li>
+                    <li>Prototyping: Can serve as a prototype for more advanced autonomous or remotely operated vehicles.</li>
+                </ul>
+                
+            </div>
+            <div class="button-container">
+              <a href="https://www.youtube.com/watch?v=Q36NbjPMV5k&ab_channel=DIYBuilder" class="cta-button">Videos</a>
+          </div>
+        </div>
+        
+    </section>
+</body>
+</html>

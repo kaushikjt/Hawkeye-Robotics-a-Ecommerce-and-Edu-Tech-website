@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container flex-wrap">
+            <a class="brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="logo" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="brand-name">Hawk Eye Robotics</span>
+            </a>
+            <nav class="nav">
+                <a class="nav-link" href="home.html">HOME</a>
+                <a class="nav-link" href="blog.html">PROJECT HUB</a>
+                <a class="nav-link" href="contact.html">CONTACT</a>
+                <a class="nav-link" href="cart.html">CART</a>
+            </nav>
+            <a href="login.html"><button class="button">
+                Log Out
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="button-icon" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </button></a>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <center><img class="hero-image" alt="hero" src="C:\Users\jtkau\OneDrive\Desktop\web development\images\water (1).jpg"></center>
+            <div class="text-content">
+                <h1 class="hero-title">Automatic Plant Watering System</h1>
+                <p class="hero-description"><b>Description:</b></p>
+                <p class="hero-description">Watering plants using Arduino can be a fun and practical project! Here's a basic outline of what you'll need and how to approach it, including the components required and a simple example of Arduino code.</p>
+                <p class="hero-description"><b>Components Required:</b></p>
+                <ul class="hero-description">
+                    <li>Soil Moisture Sensor (to detect moisture levels in the soil)</li>
+                    <li>Water Pump (to deliver water to the plants)</li>
+                    <li>Microcontroller: Arduino or similar to process sensor data and control system operations.</li>
+                    <li>Connecting wires and breadboard (for prototyping).</li>
+                    <li>Power Supply: Battery pack to power the motors and electronics.</li>
+                </ul>
+                <pre>
+ code:
+// Define constants for pins and threshold
+const int soilMoisturePin = A0;
+const int pumpControlPin = 7;
+const int moistureThreshold = 500;  // Adjust this threshold as needed
+
+void setup() {
+  pinMode(pumpControlPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int moistureValue = analogRead(soilMoisturePin);
+
+  Serial.print("Moisture Value: ");
+  Serial.println(moistureValue);
+
+  if (moistureValue < moistureThreshold) {
+    // Soil is dry, turn on pump
+    digitalWrite(pumpControlPin, HIGH);
+    delay(1000);  // Run pump for 1 second (adjust as needed)
+    digitalWrite(pumpControlPin, LOW);
+    delay(60000);  // Wait for 1 minute before next check (adjust as needed)
+  } else {
+    // Soil is moist enough, do nothing or add other functionality
+    digitalWrite(pumpControlPin, LOW);
+    delay(1000);  // Wait for 1 second before next check
+  }
+}
+                </pre>
+                <p class="hero-description"><b>Applications:</b></p>
+                <ul class="hero-description">
+                    <li>Industrial Automation: Used in manufacturing industries for sorting products based on color.</li>
+                    <li>Fun and Hobby: Enjoyable for hobbyists interested in building and controlling robotic vehicles.</li>
+                    <li>Educational Purposes: Learning about sensor integration, color detection algorithms, and automated systems.</li>
+                </ul>
+                <!-- Add button here -->
+                <div class="button-container">
+                    <a href="https://www.youtube.com/watch?v=8g8oiIa98xc&ab_channel=TechatHome" class="cta-button">Videos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

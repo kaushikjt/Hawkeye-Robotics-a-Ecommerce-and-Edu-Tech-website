@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container flex-wrap">
+            <a class="brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="logo" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="brand-name">Hawk Eye Robotics</span>
+            </a>
+            <nav class="nav">
+                <a class="nav-link" href="home.html">HOME</a>
+                <a class="nav-link" href="blog.html">PROJECT HUB</a>
+                <a class="nav-link" href="contact.html">CONTACT</a>
+                <a class="nav-link" href="cart.html">CART</a>
+            </nav>
+            <a href=login.html><button class="button">
+                Log Out
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="button-icon" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </button></a>
+        </div>
+    </header>
+
+    <section class="product-section">
+        <div class="container">
+            <div class="product-content">
+                <img alt="error" src="C:\Users\jtkau\OneDrive\Desktop\web development\images\drone motyors (1).webp" class="product-image">
+                <div class="product-details">
+                    <h2 class="brand-name">Motors</h2>
+                    <h1 class="product-title">Drone Motor</h1>
+                    <div class="product-description">
+                        Drone motors are compact, high-performance engines that drive propellers, enabling flight stability, agility, and precise control for aerial maneuvers.
+                    <div class="product-options">
+                        <div class="size-options">
+                            <span class="option-label">Quantity</span>
+                            <div class="size-select">
+                                <select id="quantity-select" class="size-dropdown"> 
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                <span class="size-icon">
+                                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="size-icon-svg" viewBox="0 0 24 24">
+                                        <path d="M6 9l6 6 6-6"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <span class="price">₹350</span>
+                        <button id="add-to-cart-btn" class="add-to-cart-button">Add to Cart</button> 
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container py-8 flex items-center flex-col sm:flex-row">
+            <a class="brand">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="logo" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="brand-name">Hawk Eye Robotics</span>
+            </a>
+            <p class="footer-text">© 2024 Hawk Eye Robotics
+                <a href="https://twitter.com/knyttneve" class="footer-link" rel="noopener noreferrer" target="_blank">@hawkeye</a>
+            </p>
+            <span class="social-icons">
+                <a class="social-icon">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon" viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                </a>
+                <a class="social-icon">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon" viewBox="0 0 24 24">
+                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                    </svg>
+                </a>
+                <a class="social-icon">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon" viewBox="0 0 24 24">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                    </svg>
+                </a>
+                <a class="social-icon">
+                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="icon" viewBox="0 0 24 24">
+                        <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                        <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                    </svg>
+                </a>
+            </span>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('add-to-cart-btn').addEventListener('click', () => { 
+            const quantity = parseInt(document.getElementById('quantity-select').value); 
+            const product = {
+                name: "Drone Motor", 
+                image: "C:\\Users\\jtkau\\OneDrive\\Desktop\\web development\\images\\drone motors (1).webp", 
+                price: 350, 
+                quantity: quantity, 
+                total: 350 * quantity 
+            };
+
+           
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+           
+            const existingProductIndex = cart.findIndex(item => item.name === product.name);
+            if (existingProductIndex > -1) {
+               
+                cart[existingProductIndex].quantity += product.quantity;
+                cart[existingProductIndex].total = cart[existingProductIndex].price * cart[existingProductIndex].quantity;
+            } else {
+              
+                cart.push(product);
+            }
+
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            
+            alert('Product added to cart');
+        });
+    </script>
+</body>
+</html>

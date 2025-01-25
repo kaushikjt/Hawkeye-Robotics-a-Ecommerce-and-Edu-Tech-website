@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPI Payment</title>
+    <link rel="stylesheet" href="cart.css">
+    
+</head>
+<body>
+    <header class="header">
+        <div class="container flex-wrap">
+            <a class="brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="logo" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="brand-name">Hawk Eye Robotics</span>
+            </a>
+            <nav class="nav">
+                <a class="nav-link" href="home.html">HOME</a>
+                <a class="nav-link" href="blog.html">PROJECT HUB</a>
+                <a class="nav-link" href="contact.html">CONTACT</a>
+                <a class="nav-link" href="cart.html">CART</a>
+            </nav>
+            <a href="login.html"><button class="button">
+                Log Out
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="button-icon" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </button></a>
+        </div>
+    </header>
+
+    <section class="payment-section">
+        <div class="payment-container">
+            <h1>Pay Here</h1>
+            <div class="qr-code">
+                
+                <img src="C:\Users\jtkau\OneDrive\Desktop\web development\WhatsApp Image 2024-07-24 at 8.49.36 PM.jpeg" alt="QR Code">
+            </div>
+            <div class="grand-total">
+                Grand Total: <span id="grand-total">₹0</span>
+            </div>
+            <div class="shipping-address">
+                Shipping Address: <span id="shipping-address">Address not available</span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function loadUpiPage() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const grandTotalElement = document.getElementById('grand-total');
+            const shippingAddressElement = document.getElementById('shipping-address');
+    
+            let grandTotal = 0;
+            cart.forEach(item => {
+                grandTotal += item.total;
+            });
+    
+        
+            const shippingAddress = localStorage.getItem('shippingAddress') || 'Address not available';
+    
+            grandTotalElement.textContent = `₹${grandTotal}`;
+            shippingAddressElement.textContent = shippingAddress;
+        }
+    
+        document.addEventListener('DOMContentLoaded', loadUpiPage);
+    </script>
+    
+</body>
+</html>

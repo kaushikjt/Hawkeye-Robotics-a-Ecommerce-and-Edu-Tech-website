@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container flex-wrap">
+            <a class="brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="logo" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="brand-name">Hawk Eye Robotics</span>
+            </a>
+            <nav class="nav">
+                <a class="nav-link" href="home.html">HOME</a>
+                <a class="nav-link" href="blog.html">PROJECT HUB</a>
+                <a class="nav-link" href="contact.html">CONTACT</a>
+                <a class="nav-link" href="cart.html">CART</a>
+            </nav>
+            <a href=login.html><button class="button">
+                Log Out
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="button-icon" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </button></a>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <center><img class="hero-image" alt="hero" src="C:\Users\jtkau\OneDrive\Desktop\web development\images\circuit diagram (1).webp"></center>
+            <div class="text-content">
+                <h1 class="hero-title">Line Follower Robot</h1>
+                <p class="hero-description"><b>Description:</b></p>
+                <p class="hero-description">This project involves building a robot that can autonomously follow a line marked on the ground using infrared sensors. The robot detects the contrast between the line and the surface and adjusts its path to stay centered on the line.
+                </p>
+                <p class="hero-description"><b>Components Required:</b></p>
+                <ul class="hero-description">
+                    <li>Chassis: Provides the structure and wheels for the car.</li>
+                    <li>DC Motors: Typically two motors for driving the car forward, backward, and turning.</li>
+                    <li>Motor Driver: Module (e.g., L298N) to control the speed and direction of the motors.</li>
+                    <li>Infrared Sensors: Typically 2 or more sensors to detect the line.</li>
+                    <li>Microcontroller: Like Arduino or ESP32 to interface with the Bluetooth module and control the motor driver.</li>
+                    <li>Power Supply: Battery pack to power the motors and electronics.</li>
+                </ul><pre>
+ code:
+ // Define pin numbers for sensors
+ const int sensorLeftPin = 2;
+ const int sensorRightPin = 3;
+ 
+ // Define pin numbers for motor driver
+ const int motorLeftPin1 = 4;
+ const int motorLeftPin2 = 5;
+ const int motorRightPin1 = 6;
+ const int motorRightPin2 = 7;
+ 
+ void setup() {
+   // Initialize sensor pins as inputs
+   pinMode(sensorLeftPin, INPUT);
+   pinMode(sensorRightPin, INPUT);
+   
+   // Initialize motor driver pins as outputs
+   pinMode(motorLeftPin1, OUTPUT);
+   pinMode(motorLeftPin2, OUTPUT);
+   pinMode(motorRightPin1, OUTPUT);
+   pinMode(motorRightPin2, OUTPUT);
+ }
+ 
+ void loop() {
+   int sensorLeftValue = digitalRead(sensorLeftPin);
+   int sensorRightValue = digitalRead(sensorRightPin);
+   
+   // Adjust motor directions based on sensor readings
+   if (sensorLeftValue == HIGH && sensorRightValue == LOW) {
+     // Turn left
+     digitalWrite(motorLeftPin1, LOW);
+     digitalWrite(motorLeftPin2, HIGH);
+     digitalWrite(motorRightPin1, HIGH);
+     digitalWrite(motorRightPin2, LOW);
+   } else if (sensorLeftValue == LOW && sensorRightValue == HIGH) {
+     // Turn right
+     digitalWrite(motorLeftPin1, HIGH);
+     digitalWrite(motorLeftPin2, LOW);
+     digitalWrite(motorRightPin1, LOW);
+     digitalWrite(motorRightPin2, HIGH);
+   } else if (sensorLeftValue == LOW && sensorRightValue == LOW) {
+     // Move forward
+     digitalWrite(motorLeftPin1, HIGH);
+     digitalWrite(motorLeftPin2, LOW);
+     digitalWrite(motorRightPin1, HIGH);
+     digitalWrite(motorRightPin2, LOW);
+   } else {
+     // Stop (optional fallback)
+     digitalWrite(motorLeftPin1, LOW);
+     digitalWrite(motorLeftPin2, LOW);
+     digitalWrite(motorRightPin1, LOW);
+     digitalWrite(motorRightPin2, LOW);
+   }
+ }
+</pre>
+                <p class="hero-description">In the circuit, infrared sensors are positioned close to the ground to detect the line. They are connected to the analog or digital input pins of the microcontroller (e.g., Arduino).
+                    The microcontroller processes sensor inputs and sends commands to the motor driver module to adjust motor speeds or directions based on the line-following algorithm.<br>
+                     Power is supplied to the motors through the motor driver module and to the microcontroller and Bluetooth module through the power supply.</p>
+                <p class="hero-description"><b>Applications:</b></p>
+                <ul class="hero-description">
+                    <li>Education: Used in STEM education to teach concepts of sensors, microcontrollers, and autonomous robotics.</li>
+                    <li>Industrial: Deployed in factories for material handling and automated guided vehicles (AGVs).</li>
+                    <li>Hobbyist Projects: Popular among robotics enthusiasts for experimentation and learning.</li>
+                </ul>
+                
+            </div>
+            <div class="button-container">
+                <a href="https://www.youtube.com/watch?v=1uM9K6CzXtI&t=5s&ab_channel=Engineers%26Electronics" class="cta-button">Videos</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
